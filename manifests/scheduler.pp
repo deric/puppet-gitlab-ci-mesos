@@ -5,6 +5,9 @@ class gitlab-ci-mesos::scheduler (
 ) inherits gitlab-ci-mesos {
 
 
+  file { $conf_dir:
+    ensure => directory,
+  }
 
   service { "gitlab-ci":
     ensure     => 'running',
@@ -13,6 +16,7 @@ class gitlab-ci-mesos::scheduler (
     enable     => $enable,
     subscribe  => [ File['/etc/gitlab-ci/scheduler.conf']
     ],
+    require    => File[$conf_dir]
   }
 
 }
