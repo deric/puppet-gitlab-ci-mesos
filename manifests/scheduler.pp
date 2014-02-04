@@ -1,5 +1,6 @@
-
-
+# Scheduler is a service (Mesos framework)
+# that communicates with GitLab CI
+#
 class gitlab-ci-mesos::scheduler (
   $ensure          = gitlab-ci-mesos::ensure,
   $mesos_master    = undef,
@@ -29,9 +30,8 @@ class gitlab-ci-mesos::scheduler (
     hasstatus  => true,
     hasrestart => true,
     enable     => $enable,
-    subscribe  => [ File["$conf_dir/scheduler.conf"]
-    ],
-    require    => [ File[$conf_dir], File["$conf_dir/scheduler.conf"]]
+    subscribe  => [File["$conf_dir/scheduler.conf"]],
+    require    => [File[$conf_dir], File["$conf_dir/scheduler.conf"]]
   }
 
 }

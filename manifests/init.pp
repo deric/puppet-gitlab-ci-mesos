@@ -10,6 +10,7 @@ class gitlab-ci-mesos(
 
   class {'gitlab-ci-mesos::install':
     ensure   => $ensure,
+    log_dir  => $log_dir,
   }
 
 }
