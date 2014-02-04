@@ -9,7 +9,7 @@ class gitlab-ci-mesos(
 
 
   class {'gitlab-ci-mesos::install':
-    ensure => $ensure,
+    ensure   => $ensure,
   }
 
 }
