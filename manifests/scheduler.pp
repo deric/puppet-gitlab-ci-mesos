@@ -2,7 +2,7 @@
 # that communicates with GitLab CI
 #
 class gitlab-ci-mesos::scheduler (
-  $ensure          = gitlab-ci-mesos::ensure,
+  $ensure          = present,
   $mesos_master    = undef,
   $gitlab_ci_url   = undef,
   $gitlab_ci_token = undef,
@@ -11,7 +11,7 @@ class gitlab-ci-mesos::scheduler (
   $gitlab_ci_dir   = '~/tmp/gitlab-runner',
   $mesos_lib       = '/usr/local/lib/libmesos.so',
   $log_dir         = '/var/log/gitlab-ci',
-  $conf_dir        = gitlab-ci-mesos::conf_dir,
+  $conf_dir        = '/etc/gitlab-ci',
 ) inherits gitlab-ci-mesos {
 
 
