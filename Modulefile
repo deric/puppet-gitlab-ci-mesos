@@ -1,4 +1,4 @@
-name    'puppet-gitlab-ci-mesos'
+name    'puppet-gitlab_ci_mesos'
 version '0.1.0'
 source 'https://github.com/deric/puppet-gitlab-ci-mesos'
 author 'Tomas Barton  '
